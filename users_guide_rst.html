@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>TriBITS Users Guide and Reference &mdash; TriBITS  documentation</title>
+  <title>1 TriBITS Users Guide and Reference &mdash; TriBITS  documentation</title>
   
 
   
@@ -42,8 +42,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="TriBITS Maintainers Guide and Reference" href="maintainers_guide_rst.html" />
-    <link rel="prev" title="Generic TriBITS Project, Build, Test, and Install Reference Guide" href="build_ref_rst.html" /> 
+    <link rel="next" title="1 TriBITS Maintainers Guide and Reference" href="maintainers_guide_rst.html" />
+    <link rel="prev" title="1 Generic TriBITS Project, Build, Test, and Install Reference Guide" href="build_ref_rst.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,19 +90,19 @@
             
               <p class="caption"><span class="caption-text">Project, Build, Test, and Install:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="build_ref_rst.html">Generic TriBITS Project, Build, Test, and Install Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_ref_rst.html"><span class="sectnum">1</span> Generic TriBITS Project, Build, Test, and Install Reference Guide</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Users Guide:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">TriBITS Users Guide and Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#background">Background</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">1</span> TriBITS Users Guide and Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction"><span class="sectnum">1.1</span> Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background"><span class="sectnum">1.2</span> Background</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tribits-developer-and-user-roles">TriBITS Developer and User Roles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cmake-language-overview-and-gotchas">CMake Language Overview and Gotchas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#software-engineering-packaging-principles">Software Engineering Packaging Principles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#tribits-project-structure">TriBITS Project Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-project-structure"><span class="sectnum">1.3</span> TriBITS Project Structure</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tribits-structural-units">TriBITS Structural Units</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#tribits-project">TriBITS Project</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tribits-repository">TriBITS Repository</a></li>
@@ -125,7 +125,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#example-tribits-projects">Example TriBITS Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-tribits-projects"><span class="sectnum">1.4</span> Example TriBITS Projects</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tribitshelloworld">TribitsHelloWorld</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tribitsexampleproject">TribitsExampleProject</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mocktrilinos">MockTrilinos</a></li>
@@ -134,14 +134,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#the-tribits-test-package">The TriBITS Test Package</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#package-dependencies-and-enable-disable-logic">Package Dependencies and Enable/Disable Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#package-dependencies-and-enable-disable-logic"><span class="sectnum">1.5</span> Package Dependencies and Enable/Disable Logic</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#example-reducedmocktrilinos-project-dependency-structure">Example ReducedMockTrilinos Project Dependency Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tribits-dependency-handling-behaviors">TriBITS Dependency Handling Behaviors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-enable-disable-use-cases">Example Enable/Disable Use Cases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tribits-project-dependencies-xml-file-and-tools">TriBITS Project Dependencies XML file and tools</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#tribits-automated-testing">TriBITS Automated Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-automated-testing"><span class="sectnum">1.6</span> TriBITS Automated Testing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#test-classifications-for-repositories-packages-and-tests">Test Classifications for Repositories, Packages, and Tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nested-layers-of-tribits-project-testing">Nested Layers of TriBITS Project Testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pre-push-testing-using-checkin-test-py">Pre-push Testing using checkin-test.py</a></li>
@@ -156,13 +156,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#multi-repository-support">Multi-Repository Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#development-workflows">Development Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#multi-repository-support"><span class="sectnum">1.7</span> Multi-Repository Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-workflows"><span class="sectnum">1.8</span> Development Workflows</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#basic-development-workflow">Basic Development Workflow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#multi-repository-development-workflow">Multi-Repository Development Workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#howtos">Howtos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#howtos"><span class="sectnum">1.9</span> Howtos</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-add-a-new-tribits-package">How to add a new TriBITS Package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-add-a-new-tribits-package-with-subpackages">How to add a new TriBITS Package with Subpackages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-add-a-new-tribits-subpackage">How to add a new TriBITS Subpackage</a></li>
@@ -181,7 +181,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-to-submit-testing-results-to-a-custom-cdash-group">How to submit testing results to a custom CDash Group</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-topics">Additional Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#additional-topics"><span class="sectnum">1.10</span> Additional Topics</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tribits-repository-contents">TriBITS Repository Contents</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#tribits-directory-contents">TriBITS/ Directory Contents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tribits-tribits-directory-contents">TriBITS/tribits/ Directory Contents</a></li>
@@ -222,7 +222,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#tribits-development-toolset">TriBITS Development Toolset</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#tribits-detailed-reference-documentation">TriBITS Detailed Reference Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-detailed-reference-documentation"><span class="sectnum">1.11</span> TriBITS Detailed Reference Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tribits-global-project-settings">TriBITS Global Project Settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tribits-macros-and-functions">TriBITS Macros and Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#tribits-add-advanced-test">tribits_add_advanced_test()</a></li>
@@ -316,9 +316,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#faq">FAQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#appendix">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#references"><span class="sectnum">1.12</span> References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#faq"><span class="sectnum">1.13</span> FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#appendix"><span class="sectnum">1.14</span> Appendix</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#history-of-tribits">History of TriBITS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#why-a-tribits-package-is-not-a-cmake-package">Why a TriBITS Package is not a CMake Package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#design-considerations-for-tribits">Design Considerations for TriBITS</a></li>
@@ -351,7 +351,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Maintainers Guide:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="maintainers_guide_rst.html">TriBITS Maintainers Guide and Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintainers_guide_rst.html"><span class="sectnum">1</span> TriBITS Maintainers Guide and Reference</a></li>
 </ul>
 
             
@@ -400,7 +400,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>TriBITS Users Guide and Reference</li>
+      <li><span class="sectnum">1</span> TriBITS Users Guide and Reference</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -420,7 +420,7 @@
            <div itemprop="articleBody">
             
   <section id="tribits-users-guide-and-reference">
-<h1><a class="toc-backref" href="#id5">TriBITS Users Guide and Reference</a><a class="headerlink" href="#tribits-users-guide-and-reference" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id5"><span class="sectnum">1</span> TriBITS Users Guide and Reference</a><a class="headerlink" href="#tribits-users-guide-and-reference" title="Permalink to this headline">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
 <dd class="field-odd"><p>Roscoe A. Bartlett (<a class="reference external" href="mailto:rabartl&#37;&#52;&#48;sandia&#46;gov">rabartl<span>&#64;</span>sandia<span>&#46;</span>gov</a>)</p>
@@ -438,18 +438,18 @@
 </dl>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#tribits-users-guide-and-reference" id="id5">TriBITS Users Guide and Reference</a></p>
-<ul>
-<li><p><a class="reference internal" href="#introduction" id="id6">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#background" id="id7">Background</a></p>
+<ul class="auto-toc simple">
+<li><p><a class="reference internal" href="#tribits-users-guide-and-reference" id="id5"><span class="sectnum">1</span> TriBITS Users Guide and Reference</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#introduction" id="id6"><span class="sectnum">1.1</span> Introduction</a></p></li>
+<li><p><a class="reference internal" href="#background" id="id7"><span class="sectnum">1.2</span> Background</a></p>
 <ul>
 <li><p><a class="reference internal" href="#tribits-developer-and-user-roles" id="id8">TriBITS Developer and User Roles</a></p></li>
 <li><p><a class="reference internal" href="#cmake-language-overview-and-gotchas" id="id9">CMake Language Overview and Gotchas</a></p></li>
 <li><p><a class="reference internal" href="#software-engineering-packaging-principles" id="id10">Software Engineering Packaging Principles</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#tribits-project-structure" id="id11">TriBITS Project Structure</a></p>
+<li><p><a class="reference internal" href="#tribits-project-structure" id="id11"><span class="sectnum">1.3</span> TriBITS Project Structure</a></p>
 <ul>
 <li><p><a class="reference internal" href="#tribits-structural-units" id="id12">TriBITS Structural Units</a></p>
 <ul>
@@ -497,7 +497,7 @@
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#example-tribits-projects" id="id35">Example TriBITS Projects</a></p>
+<li><p><a class="reference internal" href="#example-tribits-projects" id="id35"><span class="sectnum">1.4</span> Example TriBITS Projects</a></p>
 <ul>
 <li><p><a class="reference internal" href="#tribitshelloworld" id="id36">TribitsHelloWorld</a></p></li>
 <li><p><a class="reference internal" href="#tribitsexampleproject" id="id37">TribitsExampleProject</a></p></li>
@@ -507,7 +507,7 @@
 <li><p><a class="reference internal" href="#the-tribits-test-package" id="id41">The TriBITS Test Package</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#package-dependencies-and-enable-disable-logic" id="id42">Package Dependencies and Enable/Disable Logic</a></p>
+<li><p><a class="reference internal" href="#package-dependencies-and-enable-disable-logic" id="id42"><span class="sectnum">1.5</span> Package Dependencies and Enable/Disable Logic</a></p>
 <ul>
 <li><p><a class="reference internal" href="#example-reducedmocktrilinos-project-dependency-structure" id="id43">Example ReducedMockTrilinos Project Dependency Structure</a></p></li>
 <li><p><a class="reference internal" href="#tribits-dependency-handling-behaviors" id="id44">TriBITS Dependency Handling Behaviors</a></p></li>
@@ -515,7 +515,7 @@
 <li><p><a class="reference internal" href="#tribits-project-dependencies-xml-file-and-tools" id="id46">TriBITS Project Dependencies XML file and tools</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#tribits-automated-testing" id="id47">TriBITS Automated Testing</a></p>
+<li><p><a class="reference internal" href="#tribits-automated-testing" id="id47"><span class="sectnum">1.6</span> TriBITS Automated Testing</a></p>
 <ul>
 <li><p><a class="reference internal" href="#test-classifications-for-repositories-packages-and-tests" id="id48">Test Classifications for Repositories, Packages, and Tests</a></p></li>
 <li><p><a class="reference internal" href="#nested-layers-of-tribits-project-testing" id="id49">Nested Layers of TriBITS Project Testing</a></p></li>
@@ -533,14 +533,14 @@
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#multi-repository-support" id="id56">Multi-Repository Support</a></p></li>
-<li><p><a class="reference internal" href="#development-workflows" id="id57">Development Workflows</a></p>
+<li><p><a class="reference internal" href="#multi-repository-support" id="id56"><span class="sectnum">1.7</span> Multi-Repository Support</a></p></li>
+<li><p><a class="reference internal" href="#development-workflows" id="id57"><span class="sectnum">1.8</span> Development Workflows</a></p>
 <ul>
 <li><p><a class="reference internal" href="#basic-development-workflow" id="id58">Basic Development Workflow</a></p></li>
 <li><p><a class="reference internal" href="#multi-repository-development-workflow" id="id59">Multi-Repository Development Workflow</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#howtos" id="id60">Howtos</a></p>
+<li><p><a class="reference internal" href="#howtos" id="id60"><span class="sectnum">1.9</span> Howtos</a></p>
 <ul>
 <li><p><a class="reference internal" href="#how-to-add-a-new-tribits-package" id="id61">How to add a new TriBITS Package</a></p></li>
 <li><p><a class="reference internal" href="#how-to-add-a-new-tribits-package-with-subpackages" id="id62">How to add a new TriBITS Package with Subpackages</a></p></li>
@@ -560,7 +560,7 @@
 <li><p><a class="reference internal" href="#how-to-submit-testing-results-to-a-custom-cdash-group" id="id76">How to submit testing results to a custom CDash Group</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#additional-topics" id="id77">Additional Topics</a></p>
+<li><p><a class="reference internal" href="#additional-topics" id="id77"><span class="sectnum">1.10</span> Additional Topics</a></p>
 <ul>
 <li><p><a class="reference internal" href="#tribits-repository-contents" id="id78">TriBITS Repository Contents</a></p>
 <ul>
@@ -621,7 +621,7 @@
 <li><p><a class="reference internal" href="#tribits-development-toolset" id="id116">TriBITS Development Toolset</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#tribits-detailed-reference-documentation" id="id117">TriBITS Detailed Reference Documentation</a></p>
+<li><p><a class="reference internal" href="#tribits-detailed-reference-documentation" id="id117"><span class="sectnum">1.11</span> TriBITS Detailed Reference Documentation</a></p>
 <ul>
 <li><p><a class="reference internal" href="#tribits-global-project-settings" id="id118">TriBITS Global Project Settings</a></p></li>
 <li><p><a class="reference internal" href="#tribits-macros-and-functions" id="id119">TriBITS Macros and Functions</a></p>
@@ -718,9 +718,9 @@
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#references" id="id205">References</a></p></li>
-<li><p><a class="reference internal" href="#faq" id="id206">FAQ</a></p></li>
-<li><p><a class="reference internal" href="#appendix" id="id207">Appendix</a></p>
+<li><p><a class="reference internal" href="#references" id="id205"><span class="sectnum">1.12</span> References</a></p></li>
+<li><p><a class="reference internal" href="#faq" id="id206"><span class="sectnum">1.13</span> FAQ</a></p></li>
+<li><p><a class="reference internal" href="#appendix" id="id207"><span class="sectnum">1.14</span> Appendix</a></p>
 <ul>
 <li><p><a class="reference internal" href="#history-of-tribits" id="id208">History of TriBITS</a></p></li>
 <li><p><a class="reference internal" href="#why-a-tribits-package-is-not-a-cmake-package" id="id209">Why a TriBITS Package is not a CMake Package</a></p></li>
@@ -755,7 +755,7 @@
 </ul>
 </div>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id6">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6"><span class="sectnum">1.1</span> Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This document describes the usage of the TriBITS (Tribal Build, Integration,
 Test System) to develop software projects.  An initial overview of TriBITS is
 provided in the <a class="reference external" href="../overview/TribitsOverview.pdf">TriBITS Overview</a> document which contains the big picture
@@ -798,7 +798,7 @@ Documentation</a>.  Finally, several bits of information are provided in the
 <a class="reference internal" href="#appendix">Appendix</a>.</p>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id7">Background</a><a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7"><span class="sectnum">1.2</span> Background</a><a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
 <p>In order to easily find the most appropriate documentation, see the <a class="reference internal" href="#tribits-developer-and-user-roles">TriBITS
 Developer and User Roles</a> guide.  This guide describes the different roles
 that users of TriBITS may play and offers links to relevant sections of the
@@ -1152,7 +1152,7 @@ engineering books out there (see <a class="reference external" href="https://bar
 </section>
 </section>
 <section id="tribits-project-structure">
-<h2><a class="toc-backref" href="#id11">TriBITS Project Structure</a><a class="headerlink" href="#tribits-project-structure" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11"><span class="sectnum">1.3</span> TriBITS Project Structure</a><a class="headerlink" href="#tribits-project-structure" title="Permalink to this headline">¶</a></h2>
 <p>TriBITS is a Framework, implemented in CMake, to create CMake projects.  As a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Software_framework">Software Framework</a>, TriBITS defines the overall structure of a CMake build
 system for a project and it processes the various project-, repository-, and
@@ -3540,7 +3540,7 @@ without having to define its own <code class="docutils literal notranslate"><spa
 </section>
 </section>
 <section id="example-tribits-projects">
-<h2><a class="toc-backref" href="#id35">Example TriBITS Projects</a><a class="headerlink" href="#example-tribits-projects" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id35"><span class="sectnum">1.4</span> Example TriBITS Projects</a><a class="headerlink" href="#example-tribits-projects" title="Permalink to this headline">¶</a></h2>
 <p>In this section, a few different example TriBITS projects and packages are
 previewed.  Most of these examples exist in the TriBITS source directory
 <code class="docutils literal notranslate"><span class="pre">tribits</span></code> itself so they are available to all users of TriBITS.  These
@@ -3961,7 +3961,7 @@ these tests disagreed, believe the tests!</p>
 </section>
 </section>
 <section id="package-dependencies-and-enable-disable-logic">
-<h2><a class="toc-backref" href="#id42">Package Dependencies and Enable/Disable Logic</a><a class="headerlink" href="#package-dependencies-and-enable-disable-logic" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id42"><span class="sectnum">1.5</span> Package Dependencies and Enable/Disable Logic</a><a class="headerlink" href="#package-dependencies-and-enable-disable-logic" title="Permalink to this headline">¶</a></h2>
 <p>Arguably, the more important feature/aspect of the TriBITS system is the
 partitioning of a large software project into packages and managing the
 dependencies between these packages to support building, testing, and
@@ -5259,7 +5259,7 @@ Testing</a>).</p>
 </section>
 </section>
 <section id="tribits-automated-testing">
-<h2><a class="toc-backref" href="#id47">TriBITS Automated Testing</a><a class="headerlink" href="#tribits-automated-testing" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id47"><span class="sectnum">1.6</span> TriBITS Automated Testing</a><a class="headerlink" href="#tribits-automated-testing" title="Permalink to this headline">¶</a></h2>
 <p>Much of the value provided by the TriBITS system is support for testing of
 complex projects.  Many different types of testing are required in a
 complex project and development effort.  A large project with lots of
@@ -6107,7 +6107,7 @@ TriBITS projects.</p>
 </section>
 </section>
 <section id="multi-repository-support">
-<h2><a class="toc-backref" href="#id56">Multi-Repository Support</a><a class="headerlink" href="#multi-repository-support" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id56"><span class="sectnum">1.7</span> Multi-Repository Support</a><a class="headerlink" href="#multi-repository-support" title="Permalink to this headline">¶</a></h2>
 <p>TriBITS has built-in support for projects involving multiple <a class="reference internal" href="#tribits-repositories">TriBITS
 Repositories</a> which contain multiple <a class="reference internal" href="#tribits-packages">TriBITS Packages</a> (see <a class="reference internal" href="#how-to-set-up-multi-repository-support">How to set up
 multi-repository support</a>).  The basic configuration, build, and test of such
@@ -6277,7 +6277,7 @@ discussion of these various approaches and strategies to dealing with
 aggregate repos is beyond the scope of this document.</p>
 </section>
 <section id="development-workflows">
-<h2><a class="toc-backref" href="#id57">Development Workflows</a><a class="headerlink" href="#development-workflows" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id57"><span class="sectnum">1.8</span> Development Workflows</a><a class="headerlink" href="#development-workflows" title="Permalink to this headline">¶</a></h2>
 <p>In this section, the typical development workflows for a TriBITS project are
 described.  First, the <a class="reference internal" href="#basic-development-workflow">Basic Development Workflow</a> for a single-repository
 TriBITS project is described.  This is followed up with a slightly more
@@ -6307,7 +6307,7 @@ all the VC repos.</p>
 </section>
 </section>
 <section id="howtos">
-<h2><a class="toc-backref" href="#id60">Howtos</a><a class="headerlink" href="#howtos" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id60"><span class="sectnum">1.9</span> Howtos</a><a class="headerlink" href="#howtos" title="Permalink to this headline">¶</a></h2>
 <p>This section provides short, succinct lists of the steps to accomplish a few
 common tasks.  Extra details are referenced.</p>
 <section id="how-to-add-a-new-tribits-package">
@@ -7407,7 +7407,7 @@ example:</p>
 </section>
 </section>
 <section id="additional-topics">
-<h2><a class="toc-backref" href="#id77">Additional Topics</a><a class="headerlink" href="#additional-topics" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id77"><span class="sectnum">1.10</span> Additional Topics</a><a class="headerlink" href="#additional-topics" title="Permalink to this headline">¶</a></h2>
 <p>In this section, a number of miscellaneous topics and TriBITS features are
 discussed.  These features and topics are either not considered primary
 features of TriBITS (but can be very useful in many situations) or don’t neatly
@@ -9158,7 +9158,7 @@ placed in one’s path.</p>
 </section>
 </section>
 <section id="tribits-detailed-reference-documentation">
-<h2><a class="toc-backref" href="#id117">TriBITS Detailed Reference Documentation</a><a class="headerlink" href="#tribits-detailed-reference-documentation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id117"><span class="sectnum">1.11</span> TriBITS Detailed Reference Documentation</a><a class="headerlink" href="#tribits-detailed-reference-documentation" title="Permalink to this headline">¶</a></h2>
 <p>The following subsections contain detailed reference documentation for the
 various TriBITS variables, functions, and macros that are used by TriBITS
 projects that <a class="reference internal" href="#tribits-project-developers">TriBITS Project Developers</a> need to know about.  Variables,
@@ -15124,7 +15124,7 @@ paranoid.</p>
 </section>
 </section>
 <section id="references">
-<h2><a class="toc-backref" href="#id205">References</a><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id205"><span class="sectnum">1.12</span> References</a><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="agile-software-development-2003">Martin, Robert. <em>Agile Software Development (Principles, Patterns, and
 Practices)</em>. Prentice Hall. 2003.</p>
 <p id="integration-strategies-for-cse-2009">Bartlett, Roscoe. <em>Integration Strategies for Computational Science &amp;
@@ -15135,7 +15135,7 @@ Engineering for Computational Science and Engineering, 2009.  <a class="referenc
 <p id="livev"><em>LiveV</em>  <a class="reference external" href="https://github.com/lifev/cmake">https://github.com/lifev/cmake</a></p>
 </section>
 <section id="faq">
-<h2><a class="toc-backref" href="#id206">FAQ</a><a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id206"><span class="sectnum">1.13</span> FAQ</a><a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
 <p><strong>Q:</strong> Why does not TriBITS just use the standard CMake <code class="docutils literal notranslate"><span class="pre">Find&lt;PACKAGE_NAME&gt;.cmake</span></code>
 modules and the standard <code class="docutils literal notranslate"><span class="pre">find_package()</span></code> function to find TPLs?</p>
 <p><strong>A:</strong> The different “standard” CMake <code class="docutils literal notranslate"><span class="pre">Find&lt;PACKAGE_NAME&gt;.cmake</span></code> modules do not
@@ -15143,7 +15143,7 @@ have a standard set of outputs and therefore, can’t be handled in a uniform
 way.  For example,</p>
 </section>
 <section id="appendix">
-<h2><a class="toc-backref" href="#id207">Appendix</a><a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id207"><span class="sectnum">1.14</span> Appendix</a><a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
 <section id="history-of-tribits">
 <h3><a class="toc-backref" href="#id208">History of TriBITS</a><a class="headerlink" href="#history-of-tribits" title="Permalink to this headline">¶</a></h3>
 <p>TriBITS started development in November 2007 as a set of helper macros to
@@ -18339,8 +18339,8 @@ Options:
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="maintainers_guide_rst.html" class="btn btn-neutral float-right" title="TriBITS Maintainers Guide and Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="build_ref_rst.html" class="btn btn-neutral float-left" title="Generic TriBITS Project, Build, Test, and Install Reference Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="maintainers_guide_rst.html" class="btn btn-neutral float-right" title="1 TriBITS Maintainers Guide and Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="build_ref_rst.html" class="btn btn-neutral float-left" title="1 Generic TriBITS Project, Build, Test, and Install Reference Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
