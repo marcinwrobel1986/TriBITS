@@ -10,8 +10,8 @@ TriBITS Maintainers Guide and Reference
 
 :Abstract: This document describes the internal implementation and the maintenance of the TriBITS project itself.  The primary audience are those individuals who will make changes and contributions to the TriBITS project or just want to understand its implementation details.  Included is all of the same information as the TriBITS Users Guide but also include file names and line numbers for all of the documented TriBITS macros and functions.
 
-.. sectnum::
-   :depth: 2
+
+   
 
 .. Above, the depth of the TOC is set to just 2 because I don't want the
 .. TriBITS function/macro names to have section numbers appearing before them.
