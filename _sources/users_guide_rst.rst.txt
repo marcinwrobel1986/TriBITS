@@ -1,6 +1,4 @@
-=================================
-TriBITS Users Guide and Reference
-=================================
+.. rubric:: TriBITS Users Guide and Reference
 
 :Author: Roscoe A. Bartlett (rabartl@sandia.gov)
 :Date: |date|

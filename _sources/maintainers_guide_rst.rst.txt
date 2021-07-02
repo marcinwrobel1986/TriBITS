@@ -1,6 +1,4 @@
-=======================================
-TriBITS Maintainers Guide and Reference
-=======================================
+.. rubric:: TriBITS Maintainers Guide and Reference
 
 :Author: Roscoe A. Bartlett (rabartl@sandia.gov)
 :Date: |date|

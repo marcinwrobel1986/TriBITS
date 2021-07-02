@@ -1,6 +1,4 @@
-=================================================================
-Generic TriBITS Project, Build, Test, and Install Reference Guide
-=================================================================
+.. rubric:: Generic TriBITS Project, Build, Test, and Install Reference Guide
 
 :Author: Roscoe A. Bartlett
 :Contact: bartlett.roscoe@gmail.com
