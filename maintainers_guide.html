@@ -121,20 +121,330 @@
 <p class="caption"><span class="caption-text">Maintainers Guide:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">1</span> Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#background"><span class="sectnum">2</span> Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#tribits-project-structure"><span class="sectnum">3</span> TriBITS Project Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#example-tribits-projects"><span class="sectnum">4</span> Example TriBITS Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#package-dependencies-and-enable-disable-logic"><span class="sectnum">5</span> Package Dependencies and Enable/Disable Logic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#tribits-automated-testing"><span class="sectnum">6</span> TriBITS Automated Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#background"><span class="sectnum">2</span> Background</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-developer-and-user-roles"><span class="sectnum">2.1</span> TriBITS Developer and User Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cmake-language-overview-and-gotchas"><span class="sectnum">2.2</span> CMake Language Overview and Gotchas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software-engineering-packaging-principles"><span class="sectnum">2.3</span> Software Engineering Packaging Principles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tribits-project-structure"><span class="sectnum">3</span> TriBITS Project Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-structural-units"><span class="sectnum">3.1</span> TriBITS Structural Units</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-project">TriBITS Project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tribits-project-core-files">TriBITS Project Core Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tribits-project-core-variables">TriBITS Project Core Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-repository">TriBITS Repository</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tribits-repository-core-files">TriBITS Repository Core Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tribits-repository-core-variables">TriBITS Repository Core Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-package">TriBITS Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tribits-package-core-files">TriBITS Package Core Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tribits-package-core-variables">TriBITS Package Core Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-subpackage">TriBITS Subpackage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tribits-subpackage-core-files">TriBITS Subpackage Core Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tribits-subpackage-core-variables">TriBITS Subpackage Core Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-is-a-tribits-subpackage-different-from-a-tribits-package">How is a TriBITS Subpackage different from a TriBITS Package?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-tpl">TriBITS TPL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#processing-of-tribits-files-ordering-and-details"><span class="sectnum">3.2</span> Processing of TriBITS Files: Ordering and Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#full-tribits-project-configuration">Full TriBITS Project Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reduced-package-dependency-processing">Reduced Package Dependency Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-processing-tracing">File Processing Tracing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#coexisting-projects-repositories-and-packages"><span class="sectnum">3.3</span> Coexisting Projects, Repositories, and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standard-and-common-tpls"><span class="sectnum">3.4</span> Standard and Common TPLs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard-tribits-tpls">Standard TriBITS TPLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#common-tribits-tpls">Common TriBITS TPLs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#example-tribits-projects"><span class="sectnum">4</span> Example TriBITS Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tribitshelloworld"><span class="sectnum">4.1</span> TribitsHelloWorld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribitsexampleproject"><span class="sectnum">4.2</span> TribitsExampleProject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mocktrilinos"><span class="sectnum">4.3</span> MockTrilinos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reducedmocktrilinos"><span class="sectnum">4.4</span> ReducedMockTrilinos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trilinos"><span class="sectnum">4.5</span> Trilinos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-tribits-test-package"><span class="sectnum">4.6</span> The TriBITS Test Package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#package-dependencies-and-enable-disable-logic"><span class="sectnum">5</span> Package Dependencies and Enable/Disable Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-reducedmocktrilinos-project-dependency-structure"><span class="sectnum">5.1</span> Example ReducedMockTrilinos Project Dependency Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-dependency-handling-behaviors"><span class="sectnum">5.2</span> TriBITS Dependency Handling Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-enable-disable-use-cases"><span class="sectnum">5.3</span> Example Enable/Disable Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-project-dependencies-xml-file-and-tools"><span class="sectnum">5.4</span> TriBITS Project Dependencies XML file and tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tribits-automated-testing"><span class="sectnum">6</span> TriBITS Automated Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#test-classifications-for-repositories-packages-and-tests"><span class="sectnum">6.1</span> Test Classifications for Repositories, Packages, and Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nested-layers-of-tribits-project-testing"><span class="sectnum">6.2</span> Nested Layers of TriBITS Project Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pre-push-testing-using-checkin-test-py"><span class="sectnum">6.3</span> Pre-push Testing using checkin-test.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-ctest-cdash-driver"><span class="sectnum">6.4</span> TriBITS CTest/CDash Driver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ctest-cdash-nightly-testing">CTest/CDash Nightly Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ctest-cdash-ci-server">CTest/CDash CI Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-cdash-customizations"><span class="sectnum">6.5</span> TriBITS CDash Customizations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cdash-regression-email-addresses">CDash regression email addresses</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="#multi-repository-support"><span class="sectnum">7</span> Multi-Repository Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#development-workflows"><span class="sectnum">8</span> Development Workflows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#howtos"><span class="sectnum">9</span> Howtos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#additional-topics"><span class="sectnum">10</span> Additional Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#tribits-detailed-reference-documentation"><span class="sectnum">11</span> TriBITS Detailed Reference Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#tribits-system-maintainers-documentation"><span class="sectnum">12</span> TriBITS System Maintainers Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#development-workflows"><span class="sectnum">8</span> Development Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-development-workflow"><span class="sectnum">8.1</span> Basic Development Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-repository-development-workflow"><span class="sectnum">8.2</span> Multi-Repository Development Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#howtos"><span class="sectnum">9</span> Howtos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-add-a-new-tribits-package"><span class="sectnum">9.1</span> How to add a new TriBITS Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-add-a-new-tribits-package-with-subpackages"><span class="sectnum">9.2</span> How to add a new TriBITS Package with Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-add-a-new-tribits-subpackage"><span class="sectnum">9.3</span> How to add a new TriBITS Subpackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-add-a-new-tribits-tpl"><span class="sectnum">9.4</span> How to add a new TriBITS TPL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-find-package-for-a-tribits-tpl"><span class="sectnum">9.5</span> How to use find_package() for a TriBITS TPL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-add-a-new-tribits-repository"><span class="sectnum">9.6</span> How to add a new TriBITS Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-add-a-new-tribits-se-package-dependency"><span class="sectnum">9.7</span> How to add a new TriBITS SE Package dependency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-add-a-new-tribits-tpl-dependency"><span class="sectnum">9.8</span> How to add a new TriBITS TPL dependency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-tentatively-enable-a-tpl"><span class="sectnum">9.9</span> How to tentatively enable a TPL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-insert-a-package-into-an-upstream-repo"><span class="sectnum">9.10</span> How to insert a package into an upstream repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-put-a-tribits-and-raw-cmake-build-system-side-by-side"><span class="sectnum">9.11</span> How to put a TriBITS and raw CMake build system side-by-side</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-check-for-and-tweak-tribits-enable-cache-variables"><span class="sectnum">9.12</span> How to check for and tweak TriBITS “ENABLE” cache variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-tweak-downstream-tribits-enable-variables-during-package-configuration"><span class="sectnum">9.13</span> How to tweak downstream TriBITS “ENABLE” variables during package configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-set-up-multi-repository-support"><span class="sectnum">9.14</span> How to set up multi-repository support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-submit-testing-results-to-a-cdash-site"><span class="sectnum">9.15</span> How to submit testing results to a CDash site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-submit-testing-results-to-a-custom-cdash-group"><span class="sectnum">9.16</span> How to submit testing results to a custom CDash Group</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#additional-topics"><span class="sectnum">10</span> Additional Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-repository-contents"><span class="sectnum">10.1</span> TriBITS Repository Contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-directory-contents">TriBITS/ Directory Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-tribits-directory-contents">TriBITS/tribits/ Directory Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-system-project-dependencies"><span class="sectnum">10.2</span> TriBITS System Project Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-support"><span class="sectnum">10.3</span> Python Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-specific-build-reference"><span class="sectnum">10.4</span> Project-Specific Build Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-and-repository-versioning-and-release-mode"><span class="sectnum">10.5</span> Project and Repository Versioning and Release Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-environment-probing-and-setup"><span class="sectnum">10.6</span> TriBITS Environment Probing and Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-considerations"><span class="sectnum">10.7</span> Installation considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rpath-handling"><span class="sectnum">10.8</span> RPATH Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-time-system-tests"><span class="sectnum">10.9</span> Configure-time System Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-source-distributions"><span class="sectnum">10.10</span> Creating Source Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-git-bisect-with-checkin-test-py-workflows"><span class="sectnum">10.11</span> Using Git Bisect with checkin-test.py workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-repository-almost-continuous-integration"><span class="sectnum">10.12</span> Multi-Repository Almost Continuous Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aci-introduction">ACI Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aci-multi-git-tribits-repo-integration-example">ACI Multi-Git/TriBITS Repo Integration Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aci-local-sync-git-repo-setup">ACI Local Sync Git Repo Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aci-integration-build-directory-setup">ACI Integration Build Directory Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aci-sync-driver-script">ACI Sync Driver Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aci-cron-job-setup">ACI Cron Job Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#addressing-aci-failures-and-summary">Addressing ACI Failures and Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#post-push-ci-and-nightly-testing-using-checkin-test-py"><span class="sectnum">10.13</span> Post-Push CI and Nightly Testing using checkin-test.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-dashboard-driver"><span class="sectnum">10.14</span> TriBITS Dashboard Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regulated-backward-compatibility-and-deprecated-code"><span class="sectnum">10.15</span> Regulated Backward Compatibility and Deprecated Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-support-for-deprecated-code-handling">Setting up support for deprecated code handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deprecating-code-but-maintaining-backward-compatibility">Deprecating code but maintaining backward compatibility</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deprecating-c-c-classes-structs-functions-typdefs-etc">Deprecating C/C++ classes, structs, functions, typdefs, etc.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deprecating-preprocessor-macros">Deprecating preprocessor macros</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deprecating-an-entire-header-and-or-source-file">Deprecating an entire header and/or source file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hiding-deprecated-code-to-certify-and-facilitate-later-removal">Hiding deprecated code to certify and facilitate later removal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hiding-c-c-entities">Hiding C/C++ entities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiding-entire-deprecated-header-and-source-files">Hiding entire deprecated header and source files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#physically-removing-deprecated-code">Physically removing deprecated code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#removing-entire-deprecated-header-and-source-files">Removing entire deprecated header and source files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-deprecated-code-from-remaining-files">Removing deprecated code from remaining files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-and-backward-compatibility-testing"><span class="sectnum">10.16</span> Installation and Backward Compatibility Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wrapping-externally-configured-built-software"><span class="sectnum">10.17</span> Wrapping Externally Configured/Built Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-directory-snapshotting"><span class="sectnum">10.18</span> TriBITS directory snapshotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-development-toolset"><span class="sectnum">10.19</span> TriBITS Development Toolset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tribits-detailed-reference-documentation"><span class="sectnum">11</span> TriBITS Detailed Reference Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-global-project-settings"><span class="sectnum">11.1</span> TriBITS Global Project Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-macros-and-functions"><span class="sectnum">11.2</span> TriBITS Macros and Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-advanced-test">tribits_add_advanced_test()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-debug-option">tribits_add_debug_option()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-example-directories">tribits_add_example_directories()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-executable">tribits_add_executable()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-executable-and-test">tribits_add_executable_and_test()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-library">tribits_add_library()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-option-and-define">tribits_add_option_and_define()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-show-deprecated-warnings-option">tribits_add_show_deprecated_warnings_option()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-test">tribits_add_test()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-add-test-directories">tribits_add_test_directories()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-allow-missing-external-packages">tribits_allow_missing_external_packages()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-configure-file">tribits_configure_file()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-copy-files-to-binary-dir">tribits_copy_files_to_binary_dir()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-ctest-driver">tribits_ctest_driver()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-determine-if-current-package-needs-rebuilt">tribits_determine_if_current_package_needs_rebuilt()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-disable-package-on-platforms">tribits_disable_package_on_platforms()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-exclude-files">tribits_exclude_files()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-find-most-recent-binary-file-timestamp">tribits_find_most_recent_binary_file_timestamp()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-find-most-recent-file-timestamp">tribits_find_most_recent_file_timestamp()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-find-most-recent-source-file-timestamp">tribits_find_most_recent_source_file_timestamp()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-install-headers">tribits_install_headers()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-include-directories">tribits_include_directories()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">tribits_package()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-package-decl">tribits_package_decl()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-package-def">tribits_package_def()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-package-define-dependencies">tribits_package_define_dependencies()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-package-postprocess">tribits_package_postprocess()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-process-subpackages">tribits_process_subpackages()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-process-enabled-tpl">tribits_process_enabled_tpl()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">tribits_project()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-project-define-extra-repositories">tribits_project_define_extra_repositories()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-project-enable-all">tribits_project_enable_all()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-repository-define-packages">tribits_repository_define_packages()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-repository-define-tpls">tribits_repository_define_tpls()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-set-st-for-dev-mode">tribits_set_st_for_dev_mode()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">tribits_subpackage()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-subpackage-postprocess">tribits_subpackage_postprocess()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-tpl-allow-pre-find-package">tribits_tpl_allow_pre_find_package()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-tpl-find-include-dirs-and-libraries">tribits_tpl_find_include_dirs_and_libraries()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-tpl-tentatively-enable">tribits_tpl_tentatively_enable()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-verbose-print-var">tribits_verbose_print_var()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-write-flexible-package-client-export-files">tribits_write_flexible_package_client_export_files()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#general-utility-macros-and-functions"><span class="sectnum">11.3</span> General Utility Macros and Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-subdirectories">add_subdirectories()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-option">advanced_option()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-set">advanced_set()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#append-cmndline-args">append_cmndline_args()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#append-glob">append_glob()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#append-global-set">append_global_set()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#append-set">append_set()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#append-string-var">append_string_var()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#append-string-var-ext">append_string_var_ext()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#append-string-var-with-sep">append_string_var_with_sep()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assert-defined">assert_defined()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combined-option">combined_option()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#concat-strings">concat_strings()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dual-scope-append-cmndline-args">dual_scope_append_cmndline_args()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dual-scope-prepend-cmndline-args">dual_scope_prepend_cmndline_args()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dual-scope-set">dual_scope_set()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-null-set">global_null_set()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-set">global_set()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#join">join()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#message-wrapper">message_wrapper()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiline-set">multiline_set()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepend-cmndline-args">prepend_cmndline_args()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepend-global-set">prepend_global_set()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#print-nonempty-var">print_nonempty_var()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#print-nonempty-var-with-spaces">print_nonempty_var_with_spaces()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#print-var">print_var()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-global-duplicates">remove_global_duplicates()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-and-inc-dirs">set_and_inc_dirs()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-cache-on-off-empty">set_cache_on_off_empty()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-default">set_default()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-default-and-from-env">set_default_and_from_env()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#split">split()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timer-get-raw-seconds">timer_get_raw_seconds()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timer-get-rel-seconds">timer_get_rel_seconds()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timer-print-rel-time">timer_print_rel_time()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-strip-quotes-from-str">tribits_strip_quotes_from_str()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unittest-compare-const">unittest_compare_const()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unittest-has-substr-const">unittest_has_substr_const()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unittest-not-has-substr-const">unittest_not_has_substr_const()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unittest-string-regex">unittest_string_regex()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unittest-file-regex">unittest_file_regex()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unittest-final-result">unittest_final_result()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tribits-system-maintainers-documentation"><span class="sectnum">12</span> TriBITS System Maintainers Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-system-data-structures"><span class="sectnum">12.1</span> TriBITS System Data Structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lists-of-external-and-internal-packages">Lists of external and internal packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-variables-defining-the-package-dependencies-graph">List variables defining the package dependencies graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#determining-if-a-package-is-internal-or-external">Determining if a package is internal or external</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-package-dependencies">External package dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-variables-defining-include-directories-and-libraries">List variables defining include directories and libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-enable-disable-cache-variables">User enable/disable cache variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#function-call-tree-for-constructing-package-dependency-graph"><span class="sectnum">12.2</span> Function call tree for constructing package dependency graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes-on-dependency-logic"><span class="sectnum">12.3</span> Notes on dependency logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tribits-system-macros-and-functions"><span class="sectnum">12.4</span> TriBITS System Macros and Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-abort-on-missing-package">tribits_abort_on_missing_package()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-abort-on-self-dep">tribits_abort_on_self_dep()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-adjust-package-enables">tribits_adjust_package_enables()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-append-forward-dep-packages">tribits_append_forward_dep_packages()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-assert-read-dependency-vars">tribits_assert_read_dependency_vars()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-dump-package-dependencies-info">tribits_dump_package_dependencies_info()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-print-initial-dependency-info">tribits_print_initial_dependency_info()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-print-tentatively-enabled-tpls">tribits_print_tentatively_enabled_tpls()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-process-all-repository-deps-setup-files">tribits_process_all_repository_deps_setup_files()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-process-packages-and-dirs-lists">tribits_process_packages_and_dirs_lists()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-process-project-dependency-setup-file">tribits_process_project_dependency_setup_file()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-process-tpls-lists">tribits_process_tpls_lists()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-read-all-package-deps-files-create-deps-graph">tribits_read_all_package_deps_files_create_deps_graph()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-read-package-subpackage-deps-files-add-to-graph">tribits_read_package_subpackage_deps_files_add_to_graph()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-read-back-dependencies-vars">tribits_read_back_dependencies_vars()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-read-defined-external-and-intenral-toplevel-packages-lists">tribits_read_defined_external_and_intenral_toplevel_packages_lists()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-read-all-project-deps-files-create-deps-graph">tribits_read_all_project_deps_files_create_deps_graph()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-read-toplevel-package-deps-files-add-to-graph">tribits_read_toplevel_package_deps_files_add_to_graph()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-read-subpackage-deps-file-add-to-graph">tribits_read_subpackage_deps_file_add_to_graph()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-parse-subpackages-append-se-packages-add-options">tribits_parse_subpackages_append_se_packages_add_options()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-prep-to-read-dependencies">tribits_prep_to_read_dependencies()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-process-package-dependencies-lists">tribits_process_package_dependencies_lists()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-read-deps-files-create-deps-graph">tribits_read_deps_files_create_deps_graph()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-save-off-dependencies-vars">tribits_save_off_dependencies_vars()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-set-dep-packages">tribits_set_dep_packages()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-write-xml-dependency-files">tribits_write_xml_dependency_files()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribits-write-xml-dependency-files-if-supported">tribits_write_xml_dependency_files_if_supported()</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="#references"><span class="sectnum">13</span> References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#faq"><span class="sectnum">14</span> FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#appendix"><span class="sectnum">15</span> Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#appendix"><span class="sectnum">15</span> Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#history-of-tribits"><span class="sectnum">15.1</span> History of TriBITS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-a-tribits-package-is-not-a-cmake-package"><span class="sectnum">15.2</span> Why a TriBITS Package is not a CMake Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-considerations-for-tribits"><span class="sectnum">15.3</span> Design Considerations for TriBITS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clone-extra-repos-py-help"><span class="sectnum">15.4</span> clone_extra_repos.py –help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gitdist-documentation"><span class="sectnum">15.5</span> gitdist documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-help">gitdist –help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-overview">gitdist –dist-help=overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-repo-selection-and-setup">gitdist –dist-help=repo-selection-and-setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-dist-repo-status">gitdist –dist-help=dist-repo-status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-repo-versions">gitdist –dist-help=repo-versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-aliases">gitdist –dist-help=aliases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-default-branch">gitdist –dist-help=default-branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-move-to-base-dir">gitdist –dist-help=move-to-base-dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-usage-tips">gitdist –dist-help=usage-tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-script-dependencies">gitdist –dist-help=script-dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitdist-dist-help-all">gitdist –dist-help=all</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#snapshot-dir-py-help"><span class="sectnum">15.6</span> snapshot-dir.py –help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checkin-test-py-help"><span class="sectnum">15.7</span> checkin-test.py –help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-checkin-tested-commit-py-help"><span class="sectnum">15.8</span> is_checkin_tested_commit.py –help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-tribits-packages-from-files-list-py-help"><span class="sectnum">15.9</span> get-tribits-packages-from-files-list.py –help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-tribits-packages-from-last-tests-failed-py-help"><span class="sectnum">15.10</span> get-tribits-packages-from-last-tests-failed.py –help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filter-packages-list-py-help"><span class="sectnum">15.11</span> filter-packages-list.py –help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-devtools-py-help"><span class="sectnum">15.12</span> install_devtools.py –help</a></li>
+</ul>
+</li>
 </ul>
 
             

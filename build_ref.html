@@ -91,16 +91,139 @@
               <p class="caption"><span class="caption-text">Project, Build, Test, and Install:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">1</span> Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#getting-set-up-to-use-cmake"><span class="sectnum">2</span> Getting set up to use CMake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#getting-cmake-help"><span class="sectnum">3</span> Getting CMake Help</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#configuring-makefile-ninja-and-other-generators"><span class="sectnum">4</span> Configuring (Makefile, Ninja and other Generators)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#building-makefile-generator"><span class="sectnum">5</span> Building (Makefile generator)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#building-ninja-generator"><span class="sectnum">6</span> Building (Ninja generator)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#testing-with-ctest"><span class="sectnum">7</span> Testing with CTest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#installing"><span class="sectnum">8</span> Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#getting-set-up-to-use-cmake"><span class="sectnum">2</span> Getting set up to use CMake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-a-binary-release-of-cmake-casual-users"><span class="sectnum">2.1</span> Installing a binary release of CMake [casual users]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-cmake-from-source-developers-and-experienced-users"><span class="sectnum">2.2</span> Installing CMake from source [developers and experienced users]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-ninja-from-source"><span class="sectnum">2.3</span> Installing Ninja from Source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#getting-cmake-help"><span class="sectnum">3</span> Getting CMake Help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#finding-cmake-help-at-the-website"><span class="sectnum">3.1</span> Finding CMake help at the website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-cmake-help-locally"><span class="sectnum">3.2</span> Building CMake help locally</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#configuring-makefile-ninja-and-other-generators"><span class="sectnum">4</span> Configuring (Makefile, Ninja and other Generators)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-a-build-directory"><span class="sectnum">4.1</span> Setting up a build directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-configuration"><span class="sectnum">4.2</span> Basic configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selecting-the-list-of-packages-to-enable"><span class="sectnum">4.3</span> Selecting the list of packages to enable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#determine-the-list-of-packages-that-can-be-enabled"><span class="sectnum">4.3.1</span> Determine the list of packages that can be enabled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#print-package-dependencies"><span class="sectnum">4.3.2</span> Print package dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-a-set-of-packages"><span class="sectnum">4.3.3</span> Enable a set of packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-or-disable-tests-for-specific-packages"><span class="sectnum">4.3.4</span> Enable or disable tests for specific packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-to-test-all-effects-of-changing-a-given-package-s"><span class="sectnum">4.3.5</span> Enable to test all effects of changing a given package(s)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-all-packages-and-optionally-all-tests"><span class="sectnum">4.3.6</span> Enable all packages (and optionally all tests)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disable-a-package-and-all-its-dependencies"><span class="sectnum">4.3.7</span> Disable a package and all its dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-all-package-enables-in-the-cache"><span class="sectnum">4.3.8</span> Remove all package enables in the cache</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#selecting-compiler-and-linker-options"><span class="sectnum">4.4</span> Selecting compiler and linker options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-to-build-with-default-debug-or-release-compiler-flags"><span class="sectnum">4.4.1</span> Configuring to build with default debug or release compiler flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-arbitrary-compiler-flags-but-keeping-default-build-type-flags"><span class="sectnum">4.4.2</span> Adding arbitrary compiler flags but keeping default build-type flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overriding-cmake-build-type-debug-release-compiler-options"><span class="sectnum">4.4.3</span> Overriding CMAKE_BUILD_TYPE debug/release compiler options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#appending-arbitrary-libraries-and-link-flags-every-executable"><span class="sectnum">4.4.4</span> Appending arbitrary libraries and link flags every executable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#turning-off-strong-warnings-for-individual-packages"><span class="sectnum">4.4.5</span> Turning off strong warnings for individual packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overriding-all-strong-warnings-and-debug-release-compiler-options"><span class="sectnum">4.4.6</span> Overriding all (strong warnings and debug/release) compiler options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-and-disable-shadowing-warnings-for-all-project-packages"><span class="sectnum">4.4.7</span> Enable and disable shadowing warnings for all &lt;Project&gt; packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-warnings-as-errors-for-cleaned-packages"><span class="sectnum">4.4.8</span> Removing warnings as errors for CLEANED packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-debug-symbols-to-the-build"><span class="sectnum">4.4.9</span> Adding debug symbols to the build</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-support-for-ninja"><span class="sectnum">4.5</span> Enabling support for Ninja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#limiting-parallel-compile-and-link-jobs-for-ninja-builds"><span class="sectnum">4.6</span> Limiting parallel compile and link jobs for Ninja builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disabling-explicit-template-instantiation-for-c"><span class="sectnum">4.7</span> Disabling explicit template instantiation for C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disabling-the-fortran-compiler-and-all-fortran-code"><span class="sectnum">4.8</span> Disabling the Fortran compiler and all Fortran code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-runtime-debug-checking"><span class="sectnum">4.9</span> Enabling runtime debug checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-with-mpi-support"><span class="sectnum">4.10</span> Configuring with MPI support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-for-openmp-support"><span class="sectnum">4.11</span> Configuring for OpenMP support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-shared-libraries"><span class="sectnum">4.12</span> Building shared libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-static-libraries-and-executables"><span class="sectnum">4.13</span> Building static libraries and executables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-the-usage-of-resource-files-to-reduce-length-of-build-lines"><span class="sectnum">4.14</span> Enabling the usage of resource files to reduce length of build lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-support-for-an-optional-third-party-library-tpl"><span class="sectnum">4.15</span> Enabling support for an optional Third-Party Library (TPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disabling-support-for-a-third-party-library-tpl"><span class="sectnum">4.16</span> Disabling support for a Third-Party Library (TPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disabling-tentatively-enabled-tpls"><span class="sectnum">4.17</span> Disabling tentatively enabled TPLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#require-all-tpl-libraries-be-found"><span class="sectnum">4.18</span> Require all TPL libraries be found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disable-warnings-from-tpl-header-files"><span class="sectnum">4.19</span> Disable warnings from TPL header files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xsdk-configuration-options"><span class="sectnum">4.20</span> xSDK Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generating-verbose-output"><span class="sectnum">4.21</span> Generating verbose output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-disabling-deprecated-warnings"><span class="sectnum">4.22</span> Enabling/disabling deprecated warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disabling-deprecated-code"><span class="sectnum">4.23</span> Disabling deprecated code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outputting-package-dependency-information"><span class="sectnum">4.24</span> Outputting package dependency information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-related-configuration-settings"><span class="sectnum">4.25</span> Test-related configuration settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-different-test-categories"><span class="sectnum">4.25.1</span> Enabling different test categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disabling-specific-tests"><span class="sectnum">4.25.2</span> Disabling specific tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disabling-specific-test-executable-builds"><span class="sectnum">4.25.3</span> Disabling specific test executable builds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disabling-just-the-ctest-tests-but-not-the-test-executables"><span class="sectnum">4.25.4</span> Disabling just the ctest tests but not the test executables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-specific-tests-to-run-in-serial"><span class="sectnum">4.25.5</span> Set specific tests to run in serial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trace-test-addition-or-exclusion"><span class="sectnum">4.25.6</span> Trace test addition or exclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-advanced-test-start-and-end-times-and-timing-blocks"><span class="sectnum">4.25.7</span> Enable advanced test start and end times and timing blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-test-timeouts-at-configure-time"><span class="sectnum">4.25.8</span> Setting test timeouts at configure time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scaling-test-timeouts-at-configure-time"><span class="sectnum">4.25.9</span> Scaling test timeouts at configure time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spreading-out-and-limiting-tests-running-on-gpus"><span class="sectnum">4.25.10</span> Spreading out and limiting tests running on GPUs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-support-for-coverage-testing"><span class="sectnum">4.26</span> Enabling support for coverage testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-configure-options-and-documentation"><span class="sectnum">4.27</span> Viewing configure options and documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-extra-repositories-with-add-on-packages"><span class="sectnum">4.28</span> Enabling extra repositories with add-on packages:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-extra-repositories-through-a-file"><span class="sectnum">4.29</span> Enabling extra repositories through a file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selecting-a-different-source-location-for-a-package"><span class="sectnum">4.30</span> Selecting a different source location for a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reconfiguring-completely-from-scratch"><span class="sectnum">4.31</span> Reconfiguring completely from scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-configure-errors"><span class="sectnum">4.32</span> Viewing configure errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-configure-timers"><span class="sectnum">4.33</span> Adding configure timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generating-export-files"><span class="sectnum">4.34</span> Generating export files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generating-a-project-repo-version-file"><span class="sectnum">4.35</span> Generating a project repo version file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generating-git-version-date-files"><span class="sectnum">4.36</span> Generating git version date files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cmake-configure-time-development-mode-and-debug-checking"><span class="sectnum">4.37</span> CMake configure-time development mode and debug checking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#building-makefile-generator"><span class="sectnum">5</span> Building (Makefile generator)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building-all-targets"><span class="sectnum">5.1</span> Building all targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#discovering-what-targets-are-available-to-build"><span class="sectnum">5.2</span> Discovering what targets are available to build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-all-of-the-targets-for-a-package"><span class="sectnum">5.3</span> Building all of the targets for a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-all-of-the-libraries-for-a-package"><span class="sectnum">5.4</span> Building all of the libraries for a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-all-of-the-libraries-for-all-enabled-packages"><span class="sectnum">5.5</span> Building all of the libraries for all enabled packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-a-single-object-file"><span class="sectnum">5.6</span> Building a single object file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-with-verbose-output-without-reconfiguring"><span class="sectnum">5.7</span> Building with verbose output without reconfiguring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#relink-a-target-without-considering-dependencies"><span class="sectnum">5.8</span> Relink a target without considering dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#building-ninja-generator"><span class="sectnum">6</span> Building (Ninja generator)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building-in-parallel-with-ninja"><span class="sectnum">6.1</span> Building in parallel with Ninja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-in-a-subdirectory-with-ninja"><span class="sectnum">6.2</span> Building in a subdirectory with Ninja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-verbose-without-reconfiguring-with-ninja"><span class="sectnum">6.3</span> Building verbose without reconfiguring with Ninja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#discovering-what-targets-are-available-to-build-with-ninja"><span class="sectnum">6.4</span> Discovering what targets are available to build with Ninja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-specific-targets-with-ninja"><span class="sectnum">6.5</span> Building specific targets with Ninja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-single-object-files-with-ninja"><span class="sectnum">6.6</span> Building single object files with Ninja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cleaning-build-targets-with-ninja"><span class="sectnum">6.7</span> Cleaning build targets with Ninja</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#testing-with-ctest"><span class="sectnum">7</span> Testing with CTest</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#running-all-tests"><span class="sectnum">7.1</span> Running all tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#only-running-tests-for-a-single-package"><span class="sectnum">7.2</span> Only running tests for a single package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-a-single-test-with-full-output-to-the-console"><span class="sectnum">7.3</span> Running a single test with full output to the console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overriding-test-timeouts"><span class="sectnum">7.4</span> Overriding test timeouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-memory-checking"><span class="sectnum">7.5</span> Running memory checking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#installing"><span class="sectnum">8</span> Installing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-the-install-prefix"><span class="sectnum">8.1</span> Setting the install prefix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-install-ownership-and-permissions"><span class="sectnum">8.2</span> Setting install ownership and permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-install-rpath"><span class="sectnum">8.3</span> Setting install RPATH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avoiding-installing-libraries-and-headers"><span class="sectnum">8.4</span> Avoiding installing libraries and headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-software"><span class="sectnum">8.5</span> Installing the software</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="#installation-testing"><span class="sectnum">9</span> Installation Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#packaging"><span class="sectnum">10</span> Packaging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#dashboard-submissions"><span class="sectnum">11</span> Dashboard submissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#packaging"><span class="sectnum">10</span> Packaging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-tarball-of-the-source-tree"><span class="sectnum">10.1</span> Creating a tarball of the source tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#dashboard-submissions"><span class="sectnum">11</span> Dashboard submissions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-options-to-change-behavior-of-dashboard-target"><span class="sectnum">11.1</span> Setting options to change behavior of ‘dashboard’ target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-options-and-use-cases-for-the-dashboard-target"><span class="sectnum">11.2</span> Common options and use cases for the ‘dashboard’ target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-the-cdash-sites-for-the-dashboard-target"><span class="sectnum">11.3</span> Changing the CDash sites for the ‘dashboard’ target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-from-scratch-needed-if-dashboard-target-aborts-early"><span class="sectnum">11.4</span> Configuring from scratch needed if ‘dashboard’ target aborts early</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Users Guide:</span></p>
 <ul>
