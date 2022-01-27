@@ -2,7 +2,7 @@
 
 :Author: Roscoe A. Bartlett (rabartl@sandia.gov)
 :Date: |date|
-:Version: .. include:: ../copied_files/TribitsGitVersion.txt
+          :Version: .. include:: ../copied_files/TribitsGitVersion.txt
 
 .. |date| date::
 
